@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext'; // Import the useAuth hook
+import { useAuth } from '../context/AuthContext';
 
 const BlogDetail = ({ blogs }) => {
   const { id } = useParams();
   const blog = blogs[id];
-  const { user } = useAuth(); // Get the current user from the Auth context
+  const { user } = useAuth();
 
   const [comments, setComments] = useState([]);
   const [comment, setComment] = useState('');
   const [likes, setLikes] = useState(0);
-  const [hasLiked, setHasLiked] = useState(false); // Track if the user has liked the post
+  const [hasLiked, setHasLiked] = useState(false);
 
   const handleCommentSubmit = (e) => {
     e.preventDefault();
     if (comment) {
-      setComments([...comments, { text: comment, user: user.username }]); // Include username with comment
+      setComments([...comments, { text: comment, user: user.username }]);
       setComment('');
     }
   };
@@ -23,7 +23,7 @@ const BlogDetail = ({ blogs }) => {
   const handleLike = () => {
     if (!hasLiked) {
       setLikes(likes + 1);
-      setHasLiked(true); // Prevent multiple likes
+      setHasLiked(true);
     }
   };
 
@@ -51,7 +51,7 @@ const BlogDetail = ({ blogs }) => {
         ))}
       </ul>
 
-      {user ? ( // Only show the comment form if the user is logged in
+      {user ? ( 
         <form onSubmit={handleCommentSubmit}>
           <input
             type="text"
