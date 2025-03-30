@@ -59,11 +59,11 @@ const BlogList = () => {
   };
 
   if (loading) {
-    return <p>Loading...</p>; // Display loading message
+    return <p>Loading...</p>;
   }
 
   if (error) {
-    return <p className="text-danger">{error}</p>; // Display error message
+    return <p className="text-danger">{error}</p>;
   }
 
   return (
