@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext'; // Correct path to AuthContext
+import { useAuth } from '../context/AuthContext'; 
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -12,7 +12,7 @@ const Login = () => {
     e.preventDefault();
     // Call the login function from context
     login(username);
-    // Redirect to the home page or another page after login
+    
     navigate('/');
   };
 
