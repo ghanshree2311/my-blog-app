@@ -7,20 +7,20 @@ const BlogList = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
-  const [loading, setLoading] = useState(true); // State for loading
-  const [error, setError] = useState(null); // State for error handling
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchBlogs = async () => {
-      setLoading(true); // Set loading to true before fetching
+      setLoading(true);
       try {
         const response = await axios.get('https://restcountries.com/v3.1/all?fields=name,flags');
         setBlogs(response.data);
       } catch (error) {
         console.error("Error fetching blogs:", error);
-        setError("Failed to load blogs. Please try again later."); // Set error message
+        setError("Failed to load blogs. Please try again later.");
       } finally {
-        setLoading(false); // Set loading to false after fetching
+        setLoading(false);
       }
     };
     fetchBlogs();
