@@ -1,0 +1,13 @@
+/* src/components/BlogList.css */
+.blog-list {
+    margin-top: 20px;
+  }
+  
+  .blog-item {
+    margin-bottom: 15px;
+  }
+  
+  .blog-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
