@@ -10,7 +10,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Call the login function from context
+    
     login(username);
     
     navigate('/');
