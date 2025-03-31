@@ -1,3 +1,5 @@
+# To watch the project running live click on the link below
+https://ghanshree2311.github.io/my-blog-app
 
 # Getting Started with Create React App
 
